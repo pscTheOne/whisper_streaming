@@ -12,6 +12,8 @@ from whisper_online_server import Connection
 # Configuration
 WHISPER_SERVER_IP = '0.0.0.0'
 WHISPER_SERVER_PORT = 43007
+WHISPER_MODEL = 'medium'
+WHISPER_LANGUAGE = 'en'
 FLASK_SERVER_PORT = 5000
 SAMPLING_RATE = 16000
 CHUNK = 960  # 960 samples per chunk to fit with rate
@@ -23,6 +25,9 @@ transcribed_text = []
 parser = argparse.ArgumentParser()
 parser.add_argument("--host", type=str, default=WHISPER_SERVER_IP)
 parser.add_argument("--port", type=int, default=WHISPER_SERVER_PORT)
+parser.add_argument("--lang", type=str, default=WHISPER_LANGUAGE)
+parser.add_argument("--model", type=str, default=WHISPER_MODEL)
+
 add_shared_args(parser)
 args = parser.parse_args()
 min_chunk = args.min_chunk_size
