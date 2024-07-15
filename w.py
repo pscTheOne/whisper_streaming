@@ -25,8 +25,7 @@ transcribed_text = []
 parser = argparse.ArgumentParser()
 parser.add_argument("--host", type=str, default=WHISPER_SERVER_IP)
 parser.add_argument("--port", type=int, default=WHISPER_SERVER_PORT)
-parser.add_argument("--lang", type=str, default=WHISPER_LANGUAGE)
-parser.add_argument("--model", type=str, default=WHISPER_MODEL)
+
 
 add_shared_args(parser)
 args = parser.parse_args()
