@@ -6,8 +6,8 @@ import numpy as np
 import io
 import soundfile as sf
 import time
-#from whisper_online import *
-from whisper_online_server import Connection
+import argparse
+from whisper_online_server import Connection, add_shared_args, OnlineASRProcessor, WhisperTimestampedASR, FasterWhisperASR
 
 # Configuration
 WHISPER_SERVER_IP = '0.0.0.0'
@@ -25,7 +25,6 @@ transcribed_text = []
 parser = argparse.ArgumentParser()
 parser.add_argument("--host", type=str, default=WHISPER_SERVER_IP)
 parser.add_argument("--port", type=int, default=WHISPER_SERVER_PORT)
-
 
 add_shared_args(parser)
 args = parser.parse_args()
