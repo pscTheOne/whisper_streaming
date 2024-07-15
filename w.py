@@ -6,7 +6,8 @@ import numpy as np
 import io
 import soundfile as sf
 import time
-from whisper_online import Connection, OnlineASRProcessor, add_shared_args, WhisperTimestampedASR, load_audio_chunk
+#from whisper_online import *
+from whisper_online_server import Connection
 
 # Configuration
 WHISPER_SERVER_IP = '0.0.0.0'
